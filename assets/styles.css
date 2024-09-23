@@ -1,0 +1,95 @@
+/* assets/styles.css */
+
+.navbar-border-bottom {
+    border-bottom: 1px solid #dee2e6;
+}
+
+.navbar .bi-list {
+    font-size: 2rem;
+    color: black;
+}
+
+
+/* Hover effect for images */
+.img-fluid:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+/* Footer styling */
+.footer {
+    border-top: 1px solid #dee2e6;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+#root {
+    flex: 1;
+}
+
+.sidebar {
+    position: fixed;
+    top: 56px; /* Height of the navbar */
+    left: 0;
+    bottom: 0;
+    width: 250px;
+    margin-top: 10px;;
+    padding: 5;
+    overflow-y: auto;
+    overflow-x: hidden;
+    background-color: #efefef;
+    transition: transform 0.3s ease-in-out;
+    z-index: 1000;
+    border-right: 1px solid #dee2e6;
+}
+
+.sidebar.closed {
+    transform: translateX(-250px);
+}
+
+.sidebar-header {
+    position: sticky;
+    top: 0;
+    background-color: #efefef;
+    z-index: 1001;
+}
+
+.sidebar-footer {
+    position: sticky;
+    bottom: 0;
+    background-color: #efefef;
+    z-index: 1001;
+}
+
+.footer {
+    border-top: 1px solid #dee2e6;
+}
+
+/* Toggle button */
+#sidebar-toggle {
+    position: fixed;
+    top: 0px; 
+    left: 0;
+    z-index: 1100;
+    background-color: transparent;
+    border: none;
+}
+
+#sidebar-toggle > i {
+    font-size: 1.5rem;
+}
+
+
+/* Content styling */
+.content {
+    margin-left: 250px;
+    transition: margin-left 0.3s ease-in-out;
+}
+
+.content.full-width {
+    margin-left: 0;
+}
