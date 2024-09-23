@@ -10,29 +10,18 @@ def create_sidebar():
             # Header with "YourAppName" text
             html.Div(
                 [
-                    html.H4("YourAppName", className="d-flex justify-content-center"),
-                    html.Hr(),
+                    html.H5("Filter Panel", className="d-flex justify-content-center"),
+                    # html.Hr(),
                 ],
-                className="sidebar-header p-2 mt-2",
+                className="sidebar-header p-1 mt-1",
             ),
-            # Sidebar content (can be navigation links or other content)
+            # Sidebar content container
             html.Div(
-                [
-                    dbc.Nav(
-                        [
-                            dbc.NavItem(dbc.Button("🏠 Home", href="/", color="primary", outline=True, className="w-100 mb-2", style={'textAlign': 'left', 'paddingLeft': '10px'})),
-                            dbc.NavItem(dbc.Button("📱 App #1", href="#", color="primary", outline=True, className="w-100 mb-2", style={'textAlign': 'left', 'paddingLeft': '10px'})),
-                            dbc.NavItem(dbc.Button("🌏 App #2", href="#", color="primary", outline=True, className="w-100 mb-2", style={'textAlign': 'left', 'paddingLeft': '10px'})),
-                            dbc.NavItem(dbc.Button("⚙️ Settings", href="#", color="primary", outline=True, className="w-100 mb-2", style={'textAlign': 'left', 'paddingLeft': '10px'})),
-                        ],
-                        vertical=True,
-                    ),
-                ],
-                className="p-1",
+                id='sidebar-container',
+                className="p-2",
             ),
-
         ],
         id="sidebar",
-        className="sidebar p-2",  # Added p-2 class for padding
+        className="sidebar p-2",
     )
     return sidebar

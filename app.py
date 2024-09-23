@@ -1,8 +1,9 @@
 # app.py
 
-from dash import Dash, html, dcc
+from dash import Dash, html, dcc, Input, Output, State
 import dash
 import dash_bootstrap_components as dbc
+from utils.helpers import create_dashboard_sidebar_filters 
 
 # Import the callbacks registration function
 from utils.callbacks import register_callbacks
@@ -14,7 +15,6 @@ app = Dash(
     suppress_callback_exceptions=True,
     external_stylesheets=[
         dbc.themes.BOOTSTRAP,
-        # dbc.icons.FONT_AWESOME,
         'https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css'
     ],
     assets_folder='assets'
@@ -31,6 +31,7 @@ app.layout = html.Div([
     dcc.Location(id='url', refresh=False),
     dash.page_container 
 ])
+
 
 if __name__ == '__main__':
     app.run_server(debug=True)

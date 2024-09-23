@@ -1,7 +1,9 @@
 # utils/callbacks.py
 
-from dash import Output, Input, State, callback
+from dash import Output, Input, State, callback, html
+from utils.helpers import create_dashboard_sidebar_filters 
 
+# Register callback function 
 def register_callbacks(app):
     @app.callback(
         [Output("sidebar", "className"), Output("page-content", "className")],
@@ -20,3 +22,19 @@ def register_callbacks(app):
                 new_content_class = content_class + " full-width"
             return new_sidebar_class, new_content_class
         return sidebar_class, content_class
+
+
+    # Side bar filter panels for each page
+    @app.callback(
+        Output('sidebar-container', 'children'),
+        Input('url', 'pathname')
+    )
+    def update_sidebar(pathname):
+        if pathname == '/dashboard':
+            return create_dashboard_sidebar_filters()
+        # elif pathname == '/app2':
+        #     return create_app2_sidebar()
+        # # ... other pages ...
+        else:
+            return html.Div("No sidebar content")
+

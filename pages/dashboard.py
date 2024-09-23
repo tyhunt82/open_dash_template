@@ -23,7 +23,7 @@ layout = html.Div(
                     className="content",  # Ensure this className is set
                     children=[
                         # Main content goes here
-                        html.H2("Dashboard Content"),
+                        html.H2("Dashboard Content"), html.Hr(),
                         html.P("This is where your dashboard content will appear."),
                     ],
                     style={'padding': '20px', 'flex': '1'},

@@ -9,6 +9,23 @@
     color: black;
 }
 
+/* Hover effect for custom dropdown menu items */
+.custom-dropdown-item:hover {
+    background-color: #f0f0f0; /* Light grey background on hover */
+}
+
+/* Optional: Adjust the text color on hover */
+.custom-dropdown-item:hover a {
+    color: #000; /* Change text color to black on hover */
+}
+
+
+/* Change text color and add underline on hover */
+.custom-dropdown-item:hover a {
+    color: #000; /* Text color */
+    text-decoration: underline; /* Underline text */
+}
+
 
 /* Hover effect for images */
 .img-fluid:hover {
